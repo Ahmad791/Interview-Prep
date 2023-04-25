@@ -15,7 +15,6 @@ def qsort(x):
             else:
                 pivotsize+=1
                 i+=1
-        print(x,x[:pivotindex],x[pivotindex+pivotsize:])
         return qsort(x[:pivotindex])+[pivot]*pivotsize+qsort(x[pivotindex+pivotsize:])
 
 
