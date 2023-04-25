@@ -5,7 +5,7 @@ class node:
         self.leftSon = None
         self.rightSon = None
 
-
+#                      delete not done yet
 class Tree:
     def __init__(self):
         self.root = None
@@ -75,6 +75,17 @@ class Tree:
     
     def search(self,value):
         return self.recSearch(self.root,value)
+    
+    def recDelete(self,current,value):# on hold for now
+        if value==current.data:
+            return current
+        if value>current.data:
+            return self.recDelete(current.rightSon,value) if current.rightSon is not None else -1
+        else:
+            return self.recDelete(current.leftSon,value) if current.leftSon is not None else -1
+    
+    def delete(self,value):
+        print("input doesn't exist\n") if self.recDelete(self.root,value)==-1 else print(value," Successfully deleted")
 
 
 if __name__ == '__main__':
